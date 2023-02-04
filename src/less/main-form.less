@@ -1,0 +1,224 @@
+button {
+    top: 517px;
+    left: 56px;
+    width: 248px;
+    height: 41px;
+}
+
+.btn-main--purple {
+    color: #FFFFFF;
+    background: transparent linear-gradient(178deg, #650FAA 0%, #9558C4 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px @omnishop-box-shadow--color;
+    border: 0.5px solid @omnishop-border--color;
+    border-radius: 12px;
+    opacity: 1;
+
+    &:hover {
+        background: transparent linear-gradient(178deg, #6200FF 0%, #7315BE 100%) 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px @omnishop-box-shadow--color;
+    }
+
+    &:focus {
+        background: transparent linear-gradient(178deg, #450d72 0%, #794c9c 100%) 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px @omnishop-box-shadow--color;
+        border: 0.5px solid @omnishop-border--color;
+    }
+}
+
+.omnishop-main-icons {
+    justify-content: space-between;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 3vw 2vw 0px 2.5rem;
+    width: 35vw;
+    max-width: 700vw;
+
+    &:nth-child(1) {
+        margin-left: 26px;
+    }
+
+    &:nth-child(2) {
+        width: 64px;
+        margin-right: 26px;
+    }
+
+    image {
+        width: 10vw;
+    }
+
+    .omni-icon--ligth {
+        font-size: larger;
+
+        &::after {
+            content: url('../assets/Logo-Omniligth.svg');
+            display: block;
+        }
+    }
+}
+
+.omnishop-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    width: 312px;
+
+    input {
+        top: 384px;
+        left: 56px;
+        width: 247px;
+        height: 42px;
+        border: 1px solid #EDF1F7;
+        border-radius: 16px;
+        opacity: 1;
+    }
+
+}
+
+.container {
+    display: flex;
+    flex: 400px;
+    justify-content: flex-start;
+    position: relative;
+    padding: 0 20px;
+    margin-top: 322px;
+    border-radius: 24px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+
+}
+
+.caption--container {
+    top: 128px;
+    height: 91px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 3vw 2vw 0px 2.5rem;
+    width: 312px;
+
+    .caption-form {
+        top: 128px;
+        left: 0px;
+        height: 91px;
+
+        .active {
+            &:hover {
+                color: @omnishop-pink--color;
+            }
+        }
+
+        .top-caption {
+            top: 353px;
+            left: 56px;
+            width: 220px;
+            height: 17px;
+        }
+
+        .bottom-caption {
+            top: 354px;
+            left: 56px;
+            width: 147px;
+            height: 18px;
+        }
+
+        span:nth-child(1) {
+            text-align: left;
+            font: normal normal 600 36px/40px Poppins;
+            letter-spacing: 0px;
+            color: #FFD5FC;
+            font-size: -calc(100% + 36px);
+        }
+
+        span:nth-child(2) {
+            text-align: left;
+            font: normal normal 600 36px/40px Poppins;
+            letter-spacing: 0px;
+            color: #FFFFFF;
+            font-size: -calc(100% + 36px);
+        }
+    }
+}
+
+.caption-label {
+    top: 354px;
+    left: 56px;
+    width: 147px;
+    height: 18px;
+    text-align: left;
+    font: normal normal medium 12px/16px Poppins;
+    letter-spacing: 0px;
+    color: #7315BE;
+    opacity: 1;
+}
+
+
+.form-field {
+    position: relative;
+    top: 1vw;
+}
+
+.field {
+    margin-top: 2vw;
+
+    input {
+        &:focus {
+            &+label {
+                &::before {
+                    line-height: 20px;
+                    font-size: 12px;
+                    top: -10px;
+                    background: #fff;
+                    padding: 0 6px;
+                    left: 9px;
+                    color: @omnishop-pink--color;
+                }
+            }
+
+            outline: 0;
+            border-color:@omnishop-pink--color;
+        }
+
+        &:valid {
+            &+label {
+                &::before {
+                    line-height: 20px;
+                    font-size: 12px;
+                    top: -10px;
+                    background: #fff;
+                    padding: 0 6px;
+                    left: 9px;
+                    content: attr(data-title);
+                }
+            }
+        }
+
+        width: 100%;
+        line-height: 40px;
+        padding: 0 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        color: @omnishop-grayDark--color;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    position: relative;
+    margin-bottom: 15px;
+
+    label {
+        &::before {
+            content: attr(title);
+            position: absolute;
+            top: 0;
+            left: 15px;
+            line-height: 40px;
+            font-size: 14px;
+            color: @omnishop-box-shadow--color;
+            transition: 300ms all;
+        }
+    }
+}

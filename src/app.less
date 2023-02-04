@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;600&display=swap');
+@import url('./less/main-form.less');
+// Root variables
+@omnishop-pink--color: #FF006C;
+@omnishop-grayDark--color: #343434;
+@omnishop-grayLigth--color: #9F9F9F;
+@omnishop-container--color: #FFD5FC;
+@omnishop-degrade1--color: #7315BE;
+@omnishop-degrade2--color: #6200FF;
+@omnishop-box-shadow--color: #4B008666;
+@omnishop-border--color: #9B4BF8;
+@omnishop-white--color: #FFFFFF;
+@omni-blue--color: #122DFF;
+@omni-background--base: '';
+@omni-background-succes_signin: url(assets/02.svg);
+@omni-background-succes_login: url(assets/03.svg);
+@view='';
+
+.setView(@param) {
+    @view: @param;
+}
+
+.background-base() {
+    position: static;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.background-mobile-size() {
+    .setBackgroundView('Mobile');
+    background-image: @omni-background--base;
+    background-position: left bottom;
+    width: calc(104% - 10px);
+}
+
+.background-lanscape-size() {
+    .setBackgroundView('Landscape');
+    background-image: @omni-background--base;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: right top;
+}
+
+//? LogIn Background Settings
+.setBackgroundView(@type)when(@view ='Login') and (@type='Landscape') {
+
+    @omni-background--base: url('./assets/LogIn/background-landscape.png');
+}
+
+.setBackgroundView(@type)when(@view ='Login')and (@type='Mobile') {
+    @omni-background--base: url('./assets/LogIn/background-mobile.png');
+}
+
+//? SignIn Background Settings
+.setBackgroundView(@type)when(@view ='Signin')and (@type='Landscape') {
+
+    @omni-background--base: url('./assets/SigIn/background-landscape.png');
+}
+
+.setBackgroundView(@type)when(@view ='Signin')and (@type='Mobile') {
+
+    @omni-background--base: url('./assets/SigIn/background-mobile.png');
+}
+
+#app {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    margin: 0;
+}
+
+html {
+
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px),
+    only screen and (min-width: 1224px) and (orientation: landscape),
+    only screen and (min-width: 1824px) and (orientation: landscape),
+    only screen and (min-width: 321px) and (orientation: landscape),
+    only screen and (max-width: 320px) and (orientation: landscape),
+    only screen and (min-device-width: 653px) and (max-device-width: 1024px) and (orientation: landscape),
+    only screen and (min-device-width: 653px) and (max-device-width: 1024px) and (orientation: landscape),
+    only screen and (min-device-width: 768px) and (max-device-width: 1024px),
+    only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape),
+    only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape),
+    only screen and (min-device-width: 450px) and (max-device-width: 550px) and (orientation: landscape) {
+        .background-lanscape-size();
+    }
+
+    @media only screen and (min-device-width: 450px) and (max-device-width: 550px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-width: 430px) and (max-device-height: 500px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2),
+    only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2),
+    only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2),
+    only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3),
+    only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3),
+    only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2),
+    only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+        .background-mobile-size();
+    }
+
+    @media only screen and (min-device-width: 500px) and (max-device-width: 600px),
+    only screen and (min-device-width: 600px) and (max-device-width: 630px),
+    only screen and (min-width: 520px) and (max-width: 630px) {
+        .background-mobile-size();
+        width: calc(104% - 27px);
+    }
+
+    .background-base();
+}
